@@ -14,8 +14,6 @@ cellchat <- mergeCellChat(object.list, add.names = names(object.list))
 #> Merge the following slots: 'data.signaling','images','net', 'netP','meta', 'idents', 'var.features' , 'DB', and 'LR'.
 cellchat
 #> An object of class CellChat created from a merged object with multiple datasets 
-#>  555 signaling genes.
-#>  7563 cells. 
 #> CellChat analysis of single cell RNA-seq data!
 
 
