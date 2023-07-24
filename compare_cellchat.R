@@ -126,11 +126,13 @@ a$dataset=factor(a$dataset, levels=c("Control", "PASC", "IPF"))
 
 
 a$prob2=a$prob*100
+a$'-log10(pVal)'=a$pval,
+
 a=a[order(a$receptor), ]
 
 
 
-ggplot(a, aes(x=dataset, y=group.names, size=pval   ))+geom_point(aes(colour = prob2)) + scale_color_viridis(option="H")+ 
+ggplot(a, aes(x=dataset, y=group.names, size='-log10(pVal)'   ))+geom_point(aes(colour = prob2)) + scale_color_viridis(option="H")+ 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
 levels(cellchat@idents)
