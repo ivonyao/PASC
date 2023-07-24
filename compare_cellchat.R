@@ -123,17 +123,14 @@ netVisual_bubble(cellchat, sources.use = c(12, 16), targets.use = c(1:9),  compa
 a=netVisual_bubble(cellchat, sources.use = c(1, 2, 4, 5, 6, 7, 8, 9, 10), targets.use = c(3, 11),signaling = "TGFb",  comparison = c(1, 2, 3), angle.x = 45)
 a=a[["data"]]
 a$dataset=factor(a$dataset, levels=c("Control", "PASC", "IPF"))
-ggplot(a, aes(x=dataset, y=group.names, size=pval   ))+geom_point(aes(colour = prob.original)) +
-  scale_colour_gradient2(low = "blue",
-                         mid = "green",
-                         high = "red", na.value = "lightgrey")
+
 
 a$prob2=a$prob*100
 a=a[order(a$receptor), ]
 
-c=a[17:70, ]
 
-ggplot(c, aes(x=dataset, y=group.names, size=pval   ))+geom_point(aes(colour = prob2)) + scale_color_viridis(option="H")+ 
+
+ggplot(a, aes(x=dataset, y=group.names, size=pval   ))+geom_point(aes(colour = prob2)) + scale_color_viridis(option="H")+ 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
 levels(cellchat@idents)
